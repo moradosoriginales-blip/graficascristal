@@ -1,0 +1,770 @@
+/* =====================================================
+   GRÁFICAS CRISTAL - Industrial Minimalist Design
+   ===================================================== */
+
+/* =====================================================
+   CSS Custom Properties (Design Tokens)
+   ===================================================== */
+:root {
+    /* Primary: Orange Accent - #5C0F8B */
+    /* Secondary: Black - #0a0a0a */
+    /* Tertiary: Warm Gray - #8b8b8b */
+    
+    --primary: #5C0F8B;
+    --primary-foreground: #ffffff;
+    --sidebar-primary: #5C0F8B;
+    --sidebar-primary-foreground: #ffffff;
+    --chart-1: #5C0F8B;
+    --chart-2: #0a0a0a;
+    --chart-3: #8b8b8b;
+    --chart-4: #f5f5f5;
+    --chart-5: #e0e0e0;
+    --radius: 0.35rem;
+    
+    /* Light theme */
+    --background: #fafafa;
+    --foreground: #0a0a0a;
+    --card: #ffffff;
+    --card-foreground: #0a0a0a;
+    --popover: #ffffff;
+    --popover-foreground: #0a0a0a;
+    --secondary: #f5f5f5;
+    --secondary-foreground: #0a0a0a;
+    --muted: #e0e0e0;
+    --muted-foreground: #8b8b8b;
+    --accent: #5C0F8B;
+    --accent-foreground: #ffffff;
+    --destructive: #d32f2f;
+    --destructive-foreground: #ffffff;
+    --border: #e0e0e0;
+    --input: #ffffff;
+    --ring: #5C0F8B;
+    --sidebar: #ffffff;
+    --sidebar-foreground: #0a0a0a;
+    --sidebar-accent: #5C0F8B;
+    --sidebar-accent-foreground: #ffffff;
+    --sidebar-border: #e0e0e0;
+    --sidebar-ring: #5C0F8B;
+}
+
+/* Dark theme */
+[data-bs-theme="dark"] {
+    --primary: #5C0F8B;
+    --primary-foreground: #0a0a0a;
+    --sidebar-primary: #5C0F8B;
+    --sidebar-primary-foreground: #0a0a0a;
+    --background: #0a0a0a;
+    --foreground: #ffffff;
+    --card: #1a1a1a;
+    --card-foreground: #ffffff;
+    --popover: #1a1a1a;
+    --popover-foreground: #ffffff;
+    --secondary: #2a2a2a;
+    --secondary-foreground: #ffffff;
+    --muted: #4a4a4a;
+    --muted-foreground: #b0b0b0;
+    --accent: #5C0F8B;
+    --accent-foreground: #0a0a0a;
+    --destructive: #ff5252;
+    --destructive-foreground: #0a0a0a;
+    --border: #3a3a3a;
+    --input: #2a2a2a;
+    --ring: #5C0F8B;
+    --chart-1: #5C0F8B;
+    --chart-2: #ffffff;
+    --chart-3: #b0b0b0;
+    --chart-4: #2a2a2a;
+    --chart-5: #1a1a1a;
+    --sidebar: #1a1a1a;
+    --sidebar-foreground: #ffffff;
+    --sidebar-accent: #5C0F8B;
+    --sidebar-accent-foreground: #0a0a0a;
+    --sidebar-border: #3a3a3a;
+    --sidebar-ring: #5C0F8B;
+}
+
+/* =====================================================
+   Base Styles
+   ===================================================== */
+* {
+    border-color: var(--border);
+    outline-color: var(--ring);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: var(--background);
+    color: var(--foreground);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--foreground);
+}
+
+h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+}
+
+h2 {
+    font-size: clamp(2rem, 4vw, 3.5rem);
+}
+
+h3 {
+    font-size: clamp(1.5rem, 2.5vw, 2rem);
+}
+
+/* =====================================================
+   Utility Classes
+   ===================================================== */
+.bg-accent {
+    background-color: var(--accent) !important;
+}
+
+.bg-secondary {
+    background-color: var(--secondary) !important;
+}
+
+.bg-dark {
+    background-color: var(--foreground) !important;
+}
+
+.text-accent {
+    color: var(--accent) !important;
+}
+
+.text-muted {
+    color: var(--muted-foreground) !important;
+}
+
+.text-light-gray {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.border-bottom {
+    border-color: var(--border) !important;
+}
+
+.btn-accent {
+    background-color: var(--accent);
+    color: var(--accent-foreground);
+    border: none;
+    padding: 0.75rem 2rem;
+    font-weight: 600;
+    border-radius: 0.2rem;
+    font-family: 'Montserrat', sans-serif;
+    transition: all 0.3s ease;
+}
+
+.btn-accent:hover {
+    background-color: #e55a2b;
+    color: var(--accent-foreground);
+    opacity: 0.9;
+}
+
+.btn-accent:active {
+    transform: scale(0.98);
+}
+
+.btn-outline-dark {
+    border: 2px solid var(--foreground);
+    color: var(--foreground);
+    padding: 0.75rem 2rem;
+    font-weight: 600;
+    border-radius: 0.2rem;
+    font-family: 'Montserrat', sans-serif;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-dark:hover {
+    background-color: var(--foreground);
+    color: var(--background);
+}
+
+.btn-outline-secondary {
+    border: 1px solid var(--border);
+    color: var(--muted-foreground);
+    padding: 0.75rem 2rem;
+    font-weight: 600;
+    border-radius: 0.2rem;
+    font-family: 'Montserrat', sans-serif;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-secondary:hover {
+    background-color: var(--secondary);
+    color: var(--foreground);
+    border-color: var(--border);
+}
+
+.rounded-0 {
+    border-radius: 0.35rem !important;
+}
+
+.rounded-sm {
+    border-radius: 0.25rem !important;
+}
+
+/* =====================================================
+   Geometric Line Component
+   ===================================================== */
+.geometric-line {
+    height: 4px;
+    width: 60px;
+    background-color: var(--accent);
+    margin-bottom: 1.5rem;
+}
+
+/* =====================================================
+   Service Card Component
+   ===================================================== */
+.service-card {
+    position: relative;
+    background-color: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 0.35rem;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    height: 100%;
+}
+
+.service-card:hover {
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    border-color: var(--accent);
+}
+
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background-color: var(--accent);
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover::before {
+    transform: scaleY(1);
+}
+
+.service-card-image {
+    overflow: hidden;
+    height: 12rem;
+}
+
+.service-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover .service-card-image img {
+    transform: scale(1.05);
+}
+
+.service-card-content {
+    padding: 1.5rem;
+}
+
+.service-card-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: var(--foreground);
+    margin-bottom: 0.5rem;
+}
+
+.service-card-description {
+    font-size: 0.875rem;
+    color: var(--muted-foreground);
+    margin-bottom: 1rem;
+}
+
+.service-card-footer {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+}
+
+.service-card-price {
+    color: var(--accent);
+    font-weight: 700;
+    font-size: 1.125rem;
+}
+
+.service-card-arrow {
+    color: var(--accent);
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: all 0.3s ease;
+}
+
+.service-card:hover .service-card-arrow {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* =====================================================
+   Contact Card Component
+   ===================================================== */
+.contact-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background-color: var(--accent);
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 0.3s ease;
+}
+
+.contact-card:hover::before {
+    transform: scaleY(1);
+}
+
+.contact-card:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.contact-card svg {
+    transition: transform 0.3s ease;
+}
+
+.contact-card:hover svg {
+    transform: scale(1.1);
+}
+
+/* =====================================================
+   Navbar Styles
+   ===================================================== */
+.navbar {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.navbar-brand .brand-text {
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: -0.02em;
+}
+
+.navbar-toggler {
+    border: none;
+    padding: 0;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 0, 0, 0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+[data-bs-theme="dark"] .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+.nav-link {
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--accent);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--accent) !important;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* =====================================================
+   Hero Section
+   ===================================================== */
+.hero-section {
+    position: relative;
+}
+
+.hero-title {
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: -0.02em;
+}
+
+/* =====================================================
+   Modal Styles
+   ===================================================== */
+.modal-content {
+    background-color: var(--card);
+    border-radius: 0.35rem;
+    border: 1px solid var(--border);
+}
+
+.modal-header {
+    padding: 1.5rem;
+}
+
+.modal-body {
+    padding: 1.5rem;
+}
+
+.modal-footer {
+    padding: 1rem 1.5rem 1.5rem;
+}
+
+.modal-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+}
+
+.btn-close {
+    filter: invert(1) grayscale(100%) brightness(200%);
+}
+
+[data-bs-theme="dark"] .btn-close {
+    filter: none;
+}
+
+/* =====================================================
+   Toast Styles
+   ===================================================== */
+.toast {
+    background-color: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 0.35rem;
+}
+
+.toast-header {
+    background-color: var(--secondary);
+    border-bottom: 1px solid var(--border);
+    color: var(--foreground);
+}
+
+.toast-body {
+    color: var(--foreground);
+}
+
+/* =====================================================
+   Footer Styles
+   ===================================================== */
+footer {
+    border-top: 1px solid var(--border);
+}
+
+footer a:hover {
+    color: var(--foreground) !important;
+}
+
+/* =====================================================
+   Responsive Adjustments
+   ===================================================== */
+@media (max-width: 991.98px) {
+    .navbar-collapse {
+        background-color: var(--background);
+        padding: 1rem 0;
+        border-radius: 0.35rem;
+        margin-top: 0.5rem;
+    }
+    
+    .nav-link {
+        padding: 0.5rem 0;
+    }
+    
+    .nav-link::after {
+        display: none;
+    }
+}
+
+@media (max-width: 767.98px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+    
+    h2 {
+        font-size: 2rem;
+    }
+    
+    .hero-section {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+    
+    #servicios {
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .hero-section {
+        padding-top: 5rem;
+        padding-bottom: 5rem;
+    }
+    
+    #servicios {
+        padding-top: 6rem;
+        padding-bottom: 6rem;
+    }
+}
+
+@media (min-width: 992px) {
+    .hero-section {
+        padding-top: 6rem;
+        padding-bottom: 6rem;
+    }
+    
+    #servicios {
+        padding-top: 7rem;
+        padding-bottom: 7rem;
+    }
+}
+
+/* =====================================================
+   Animation Utilities
+   ===================================================== */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease forwards;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+.pulse {
+    animation: pulse 2s ease-in-out infinite;
+}
+
+/* =====================================================
+   Image Overlay Effects
+   ===================================================== */
+.image-overlay {
+    position: relative;
+}
+
+.image-overlay::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, transparent 50%, rgba(0, 0, 0, 0.1) 100%);
+    pointer-events: none;
+}
+
+/* =====================================================
+   Focus States
+   ===================================================== */
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+}
+
+/* =====================================================
+   Selection
+   ===================================================== */
+::selection {
+    background-color: var(--accent);
+    color: var(--accent-foreground);
+}
+
+/* =====================================================
+   Scrollbar Styling
+   ===================================================== */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--secondary);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--muted);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--muted-foreground);
+}
+
+.navbar-brand img {
+    height: 42px;           /* tamaño base para desktop */
+    width: auto;
+    max-width: 220px;       /* evita que se haga gigante en pantallas muy anchas */
+    object-fit: contain;
+}
+
+/* Ajustes responsivos */
+@media (max-width: 991.98px) {
+    .navbar-brand img {
+        height: 38px;       /* un poco más pequeño en tablets */
+    }
+}
+
+@media (max-width: 575.98px) {
+    .navbar-brand img {
+        height: 34px;       /* tamaño cómodo en móviles */
+    }
+}
+
+/* Logo y Brand Text - Versión mejorada */
+.navbar-brand {
+    gap: 1rem; /* espacio entre logo y texto */
+}
+
+.logo-img {
+    height: 56px;           /* tamaño base desktop - puedes ajustar */
+    width: auto;
+    max-width: 240px;       /* evita que explote en pantallas muy anchas */
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.logo-img:hover {
+    transform: scale(1.05); /* sutil zoom al hover para interactividad */
+}
+
+/* Logo y Brand Text - Versión MÁS GRANDE */
+.navbar-brand {
+    gap: 1.25rem;           /* más espacio entre logo y texto */
+}
+
+.logo-img {
+    height: 68px;           /* ¡más grande! (antes 56px) */
+    width: auto;
+    max-width: 280px;       /* límite para no desbordar en pantallas anchas */
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.logo-img:hover {
+    transform: scale(1.06);
+}
+
+/* Texto de la marca - aún más grande + sombra más impactante */
+.brand-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.25rem;     /* fs-2 aprox - mucho más grande */
+    letter-spacing: -0.8px;
+    font-weight: 800;       /* más bold para mayor presencia */
+    text-shadow: 
+        0 3px 8px rgba(0, 0, 0, 0.35),          /* sombra principal más fuerte */
+        0 6px 20px rgba(92, 15, 139, 0.25);     /* tinte morado más visible */
+    transition: text-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.brand-text:hover {
+    text-shadow: 
+        0 5px 12px rgba(0, 0, 0, 0.45),
+        0 10px 30px rgba(92, 15, 139, 0.35);
+    transform: translateY(-2px); /* sutil elevación al hover */
+}
+
+/* Responsive - se ajusta sin perder impacto */
+@media (max-width: 991.98px) {  /* tablets */
+    .logo-img {
+        height: 58px;
+    }
+    .brand-text {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 767.98px) {  /* móviles medianos */
+    .navbar-brand {
+        gap: 1rem;
+    }
+    .logo-img {
+        height: 52px;
+    }
+    .brand-text {
+        font-size: 1.75rem;
+    }
+}
+
+@media (max-width: 575.98px) {  /* móviles pequeños */
+    .logo-img {
+        height: 46px;
+    }
+    .brand-text {
+        font-size: 1.5rem;
+    }
+}
+
+/* Botón WhatsApp - Verde oficial + mejor diseño */
+.whatsapp-btn {
+    background-color: #25D366 !important;     /* Verde WhatsApp oficial */
+    color: white !important;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    padding: 0.65rem 1.1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+}
+
+.whatsapp-btn:hover {
+    background-color: #128C7E !important;     /* Verde oscuro al hover */
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4);
+}
+
+.whatsapp-btn:active {
+    transform: translateY(0);
+}
+
+/* En dark mode mantiene el verde WhatsApp (queda genial) */
+[data-bs-theme="dark"] .whatsapp-btn {
+    background-color: #25D366 !important;
+    color: white !important;
+}
+
+[data-bs-theme="dark"] .whatsapp-btn:hover {
+    background-color: #128C7E !important;
+}

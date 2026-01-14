@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="es" data-bs-theme="light">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Servicios profesionales de impresión publicitaria: banners, volantes, llaveros, calendarios, polos y más. Contacta con Gráficas Cristal." />
+    <meta name="keywords" content="impresión, publicidad, banners, volantes, calendarios, polos, viniles" />
+    <title>Gráficas Cristal - Servicios de Impresión Publicitaria</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <!-- Header/Navigation -->
+    <header class="sticky-top bg-white border-bottom border-1" id="header">
+        <nav class="navbar navbar-expand-lg container py-3">
+            <div class="container-fluid px-0">
+                <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+                    <a class="navbar-brand d-flex align-items-center gap-3" href="#">
+                        <!-- Logo más grande y responsive -->
+                        <img 
+                            src="images/logo_01.png" 
+                            alt="Gráficas Cristal - Logotipo" 
+                            class="logo-img"
+                        >
+                        
+                        <!-- Texto más grande con sombra -->
+                        <span class="brand-text fw-bold fs-3 fs-md-2 text-foreground">
+                            Gráficas Cristal
+                        </span>
+                    </a>
+
+                </a>
+                <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto align-items-center gap-lg-4">
+                        <li class="nav-item">
+                            <a class="nav-link text-foreground" href="#servicios">Servicios</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-foreground" href="#contacto">Contacto</a>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <a 
+                                href="https://wa.me/51993534635?text=¡Hola%21%20Vengo%20desde%20la%20web%20de%20Gráficas%20Cristal%20y%20quiero%20una%20cotización%20%F0%9F%98%8A" 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                class="btn btn-success d-flex align-items-center gap-2 ms-lg-2 whatsapp-btn">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-message-circle">
+                                    <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+                                </svg>
+                                <span class="d-none d-lg-inline">WhatsApp</span>
+                                <span class="d-lg-none">Chat</span>
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section overflow-hidden bg-white">
+        <div class="container py-5 py-md-5">
+            <div class="row align-items-center g-5">
+                <div class="col-12 col-md-6">
+                    <div>
+                        <div class="geometric-line"></div>
+                        <h2 class="display-5 display-md-4 fw-bold text-foreground mb-4 hero-title">
+                            Impresión Publicitaria de Calidad
+                        </h2>
+                        <p class="lead text-muted lh-base mb-4">
+                            Somos especialistas en servicios de impresión profesional. Desde banners hasta prendas personalizadas, transformamos tu visión en realidad con la mejor calidad.
+                        </p>
+                        <div class="d-flex gap-3 flex-wrap">
+                            <button class="btn btn-accent px-4 py-2 fw-semibold d-flex align-items-center gap-2" onclick="handleQuoteRequest()">
+                                Solicitar Cotización
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                            </button>
+                            <button class="btn btn-outline-dark px-4 py-2 fw-semibold">
+                                Ver Catálogo
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="position-relative">
+                        <img src="images/hero-banner.jpg" alt="Servicios de impresión" class="img-fluid rounded-0 shadow-lg w-100" />
+                        <div class="position-absolute" style="bottom: -16px; right: -16px; width: 96px; height: 96px; border: 2px solid var(--accent); opacity: 0.5;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Grid Section -->
+    <section id="servicios" class="py-5 py-md-5 bg-secondary">
+        <div class="container">
+            <div class="mb-5 mb-md-5">
+                <div class="geometric-line"></div>
+                <h2 class="display-5 display-md-4 fw-bold text-foreground mb-3">Nuestros Servicios</h2>
+                <p class="lead text-muted lh-base" style="max-width: 42rem;">
+                    Ofrecemos una amplia gama de servicios de impresión publicitaria adaptados a tus necesidades y presupuesto.
+                </p>
+            </div>
+
+            <div class="row g-4" id="services-grid">
+                <!-- Services will be injected via JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="py-5 py-md-5 bg-white">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-12 col-md-6">
+                    <img src="images/banners-service.jpg" alt="Calidad de impresión" class="img-fluid rounded-0 shadow-lg w-100" />
+                </div>
+                <div class="col-12 col-md-6">
+                    <div>
+                        <div class="geometric-line"></div>
+                        <h2 class="display-6 display-md-4 fw-bold text-foreground mb-4">¿Por qué elegirnos?</h2>
+                    </div>
+
+                    <div class="d-flex flex-column gap-4">
+                        <div class="d-flex gap-3">
+                            <div class="flex-shrink-0 bg-accent d-flex align-items-center justify-content-center rounded-0" style="width: 48px; height: 48px;">
+                                <span class="text-white fw-bold">✓</span>
+                            </div>
+                            <div>
+                                <h3 class="fw-bold text-foreground mb-1">Calidad Premium</h3>
+                                <p class="text-muted mb-0">Utilizamos tecnología de punta y materiales de la mejor calidad para garantizar resultados excepcionales.</p>
+                            </div>
+                        </div>
+                        <div class="d-flex gap-3">
+                            <div class="flex-shrink-0 bg-accent d-flex align-items-center justify-content-center rounded-0" style="width: 48px; height: 48px;">
+                                <span class="text-white fw-bold">✓</span>
+                            </div>
+                            <div>
+                                <h3 class="fw-bold text-foreground mb-1">Precios Competitivos</h3>
+                                <p class="text-muted mb-0">Ofrecemos las mejores tarifas del mercado sin comprometer la calidad de nuestros productos.</p>
+                            </div>
+                        </div>
+                        <div class="d-flex gap-3">
+                            <div class="flex-shrink-0 bg-accent d-flex align-items-center justify-content-center rounded-0" style="width: 48px; height: 48px;">
+                                <span class="text-white fw-bold">✓</span>
+                            </div>
+                            <div>
+                                <h3 class="fw-bold text-foreground mb-1">Atención Personalizada</h3>
+                                <p class="text-muted mb-0">Cada proyecto es único. Nos dedicamos a entender tus necesidades y ofrecer soluciones a medida.</p>
+                            </div>
+                        </div>
+                        <div class="d-flex gap-3">
+                            <div class="flex-shrink-0 bg-accent d-flex align-items-center justify-content-center rounded-0" style="width: 48px; height: 48px;">
+                                <span class="text-white fw-bold">✓</span>
+                            </div>
+                            <div>
+                                <h3 class="fw-bold text-foreground mb-1">Entrega Rápida</h3>
+                                <p class="text-muted mb-0">Cumplimos con los plazos establecidos para que tu proyecto esté listo cuando lo necesites.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contacto" class="py-5 py-md-5 bg-dark text-white">
+        <div class="container">
+            <div class="text-center mb-5" style="max-width: 48rem; margin: 0 auto;">
+                <div class="d-flex justify-content-center mb-3">
+                    <div class="bg-accent" style="width: 64px; height: 4px;"></div>
+                </div>
+                <h2 class="display-5 display-md-4 fw-bold mb-3">¿Listo para tu Proyecto?</h2>
+                <p class="lead text-light-gray mb-0">
+                    Contacta con nosotros hoy mismo para obtener una cotización personalizada y conocer cómo podemos ayudarte.
+                </p>
+            </div>
+
+            <div class="row g-4 justify-content-center">
+                <div class="col-12 col-md-4">
+                    <a href="tel:993534635" class="contact-card d-block p-4 rounded-0 text-decoration-none bg-white bg-opacity-10 backdrop-blur transition-colors">
+                        <div class="text-accent mb-3" style="width: 48px; height: 48px;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                        </div>
+                        <h3 class="fw-bold mb-2 fs-5 text-white">Llamar</h3>
+                        <p class="text-light-gray mb-0">+51 993 534 635</p>
+                    </a>
+                </div>
+                <div class="col-12 col-md-4">
+                    <a href="mailto:info@graficascristal.com" class="contact-card d-block p-4 rounded-0 text-decoration-none bg-white bg-opacity-10 backdrop-blur transition-colors">
+                        <div class="text-accent mb-3" style="width: 48px; height: 48px;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                        </div>
+                        <h3 class="fw-bold mb-2 fs-5 text-white">Email</h3>
+                        <p class="text-light-gray mb-0">info@graficascristal.com</p>
+                    </a>
+                </div>
+                <div class="col-12 col-md-4">
+                    <a href="#" class="contact-card d-block p-4 rounded-0 text-decoration-none bg-white bg-opacity-10 backdrop-blur transition-colors">
+                        <div class="text-accent mb-3" style="width: 48px; height: 48px;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                        </div>
+                        <h3 class="fw-bold mb-2 fs-5 text-white">Ubicación</h3>
+                        <p class="text-light-gray mb-0">Breña, Lima, Perú</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-secondary py-4">
+        <div class="container">
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+                <p class="mb-0">&copy; 2024 Gráficas Cristal. Todos los derechos reservados.</p>
+                <div class="d-flex gap-4">
+                    <a href="#" class="text-secondary text-decoration-none hover:text-white transition-colors">Términos</a>
+                    <a href="#" class="text-secondary text-decoration-none hover:text-white transition-colors">Privacidad</a>
+                    <a href="#" class="text-secondary text-decoration-none hover:text-white transition-colors">Contacto</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Service Detail Modal -->
+    <div class="modal fade" id="serviceModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content rounded-0 border-0">
+                <div class="modal-header border-0 pb-0">
+                    <h5 class="modal-title fw-bold text-foreground" id="modalTitle">Título del Servicio</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="text-muted mb-4" id="modalDescription">Descripción del servicio</p>
+                    <div class="bg-secondary p-3 rounded-0 mb-4">
+                        <p class="fs-4 fw-bold text-accent mb-0" id="modalPrice">Precio</p>
+                    </div>
+                    <div>
+                        <h6 class="fw-bold text-foreground mb-3">Características:</h6>
+                        <ul class="list-unstyled d-flex flex-column gap-2" id="modalDetails">
+                            <!-- Details will be injected via JavaScript -->
+                        </ul>
+                    </div>
+                </div>
+                <div class="modal-footer border-0 pt-0">
+                    <button type="button" class="btn btn-outline-secondary w-100" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-accent w-100 d-flex align-items-center justify-content-center gap-2" onclick="handleQuoteRequest()">
+                        Solicitar Cotización
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Container -->
+    <div class="toast-container position-fixed bottom-0 end-0 p-3"></div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
+</html>
